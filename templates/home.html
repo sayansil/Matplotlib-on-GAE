@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Test Page</title>
+    <script type="text/javascript" src="https://cdn.pydata.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
 </head>
 
 <body>
@@ -11,7 +15,13 @@
 
     <p>This plot is just plt.plot(range(10))</p>
 
-    <img src='data:image/png;base64,{{ html_plot1 }}' />
+    <img src='data:image/png;base64,{{ mplib_data }}' />
+
+    </br>
+
+    {{ bokeh_div | safe }}
+
+    {{ bokeh_script | safe }}
 
 </body>
 
